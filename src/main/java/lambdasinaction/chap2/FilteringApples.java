@@ -29,12 +29,18 @@ public class FilteringApples{
 		System.out.println(redAndHeavyApples);
 
 		// [Apple{color='red', weight=120}]
+		/** 匿名内部类 **/
 		List<Apple> redApples2 = filter(inventory, new ApplePredicate() {
 			public boolean test(Apple a){
 				return a.getColor().equals("red"); 
 			}
 		});
 		System.out.println(redApples2);
+
+		/** lambda **/
+		// [Apple{color='red', weight=120}]
+		List<Apple> redApples3 = filter(inventory, (Apple a) -> "red".equals(a.getColor()));
+		System.out.println(redApples3);
 
 	}
 
