@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TestPrediact {
-
+    // ZxwPrediacte 替换成  Predicate<String>  一样work
     static List<String>  filter(List<String> ss, ZxwPrediacte prediacte){
         List<String> res = new ArrayList<>();
         for(String s: ss){
