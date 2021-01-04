@@ -21,7 +21,7 @@ public class FunctionInterfaceZxw_Client {
 
     public static void main(String[] args) {
         FunctionInterfaceZxw_Client c = new FunctionInterfaceZxw_Client();
-        c.callIt(Arrays.asList("ghg", "123d", "fsasdsadsa"), (String s) -> System.out.println(s.length()));
+        c.callIt(Arrays.asList("ghg", "123d", "fsasdsadsa"), s -> System.out.println(s.length()));  //注意，(String s)  可以简写成 s
         c.callIt(Arrays.asList("ghg", "123d", "fsasdsadsa"), (String s) -> System.out.println(s.toUpperCase()));
 
         c.callIt2(Arrays.asList("ghg", "123d", "fsasdsadsa"), (String s) -> System.out.println(s.length()));
