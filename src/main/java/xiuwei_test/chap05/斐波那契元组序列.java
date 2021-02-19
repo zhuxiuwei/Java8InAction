@@ -24,7 +24,10 @@ public class 斐波那契元组序列 {
                 .forEach(x -> System.out.println(Arrays.toString(x)));
 
         System.out.println("//用generate生成");
-        final Pair pair = new Pair(0, 1);   //lambda里的变量，是final的。所以这里借助了Pair类，用其field来跟踪变化。
+        /* lambda里的变量，是final的。所以这里借助了Pair类，用其field来跟踪变化。
+            这也意味着，这段Lambda代码时有副作用的(pair对象有可变状态)，对并发操作不友好。。而iterate方法是无副作用的，推荐使用。
+         */
+        final Pair pair = new Pair(0, 1);
         Stream.generate(() -> {
             int old_first = pair.first, old_second = pair.second;
             int[] res = new int[]{old_first, old_second};
