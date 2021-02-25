@@ -13,6 +13,7 @@ public class Reducing {
     }
 
     private static int calculateTotalCalories() {
+        //return menu.stream().collect(reducing(0, dish -> dish.getCalories(), (i, j) -> i + j));  //xiuwei: 也可以这么写
         return menu.stream().collect(reducing(0, Dish::getCalories, (Integer i, Integer j) -> i + j));
     }
 
